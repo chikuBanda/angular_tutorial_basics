@@ -1,2 +1,27 @@
-<app-server></app-server>
+<label>Server name: </label>
+<input
+style="display: block;"
+  type="text"
+  (input)="onServerNameInput($event)"
+  >
+
+<button
+  style="display: block; margin-top: 10px; margin-bottom: 10px;"
+  class="btn btn-primary"
+  [disabled]="getAllowServer()"
+  (click)="onServerCreation()"
+  >Add Server</button>
+
+  <p
+    style="margin-top: 10px; margin-bottom: 10px;"
+    >
+    {{ serverName }}
+  </p>
+
+  <p
+    style="margin-top: 10px; margin-bottom: 10px;"
+    [innerText]="serverCreationStatus"
+    ></p>
+
+  <app-server></app-server>
 <app-server></app-server>
