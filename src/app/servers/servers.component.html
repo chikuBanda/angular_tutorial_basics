@@ -1,9 +1,18 @@
 <label>Server name: </label>
-<input
-style="display: block;"
+
+<!--<input
+  style="display: block;"
   type="text"
   (input)="onServerNameInput($event)"
-  >
+>-->
+
+<input
+  style="display: block;"
+  type="text"
+  [(ngModel)]="serverName"
+  (input)="onServerNameInput($event)"
+>
+
 
 <button
   style="display: block; margin-top: 10px; margin-bottom: 10px;"

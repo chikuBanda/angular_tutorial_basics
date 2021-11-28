@@ -15,7 +15,7 @@ import { ServerComponent } from '../server/server.component';
 export class ServersComponent implements OnInit {
   allowServer: boolean = true;
   serverCreationStatus: string = 'no server created';
-  serverName: string = '';
+  serverName: string = 'hello';
 
   constructor() {
 
@@ -33,7 +33,7 @@ export class ServersComponent implements OnInit {
   }
 
   onServerCreation () {
-    this.serverCreationStatus = 'A new server has been created';
+    this.serverCreationStatus = 'A new server has been created. Server name is: ' + this.serverName;
   }
 
   onServerNameInput(event: Event) {
