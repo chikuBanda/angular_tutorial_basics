@@ -19,18 +19,26 @@
   class="btn btn-primary"
   [disabled]="getAllowServer()"
   (click)="onServerCreation()"
-  >Add Server</button>
+  >Add Server
+</button>
 
-  <p
-    style="margin-top: 10px; margin-bottom: 10px;"
-    >
-    {{ serverName }}
+<!--<p
+  style="margin-top: 10px; margin-bottom: 10px;"
+  >
+  {{ serverName }}
+</p>-->
+
+<p
+  *ngIf="isServerCreated; else mytemplate"
+  style="margin-top: 10px; margin-bottom: 10px;"
+  [innerText]="serverCreationStatus"
+  >
+</p>
+
+<ng-template #mytemplate>
+  <p>
+    No server created
   </p>
+</ng-template>
 
-  <p
-    style="margin-top: 10px; margin-bottom: 10px;"
-    [innerText]="serverCreationStatus"
-    ></p>
-
-  <app-server></app-server>
-<app-server></app-server>
+<app-server *ngFor="let server of servers"></app-server>

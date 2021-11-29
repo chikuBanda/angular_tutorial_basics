@@ -1,1 +1,7 @@
-<h2>The server with id {{ getServerId() }} is currently {{ getSeverStatus() }} </h2>
+<!--<h2>The server with id {{ getServerId() }}
+  is currently <span [ngStyle]="{'color': getColor()}">{{ getSeverStatus() }}</span>
+</h2>-->
+
+<h2 [ngClass]="{myclass: true}">The server with id {{ getServerId() }}
+  is currently <span [ngStyle]="{color: getColor()}">{{ getSeverStatus() }}</span>
+</h2>
